@@ -1,0 +1,63 @@
+"""
+GRUPA 143: Echipa formata din:
+              Vlad Melisa-Andra
+              Kayed Amar
+              Buzescu Alexandru-Gabriel
+  
+"""
+
+States:
+ q1
+ q2
+ q3
+ q4
+ q5
+ q_accept
+ q_reject
+
+End
+
+Input_alphabet: 
+  a
+  b
+  c
+  #
+End
+
+Tape_alphabet: 
+  x
+  a
+  b
+  c
+  #
+  _
+End
+
+Transition_head_1:
+  q1 q_reject _ _ L
+  q2 q3 a x R
+  q2 q4 b x R
+  q2 q5 c x R
+  q2 q_reject # # R
+  q1 q_reject # # R
+End
+
+Transition_head_2:
+  q1 q1 a a R
+  q1 q1 b b R
+  q1 q1 c c R
+  q1 q2 # # R
+  q3 q2 a x R
+  q4 q2 b x R
+  q5 q2 c x R
+  q3 q_reject b b R
+  q3 q_reject c c R
+  q3 q_accept _ _ L
+  q4 q_reject a a R
+  q4 q_reject c c R  
+  q4 q_accept _ _ L
+  q5 q_reject a a R
+  q5 q_reject b b R  
+  q5 q_accept _ _ L
+End
+
